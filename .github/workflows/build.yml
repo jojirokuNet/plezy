@@ -92,7 +92,7 @@ jobs:
             plezy-android-x86_64.tar.gz
 
   build-ios:
-    runs-on: macos-26
+    runs-on: [self-hosted, macos-host]
     permissions:
       id-token: write
       attestations: write
@@ -150,7 +150,7 @@ jobs:
           path: plezy-ios.ipa
 
   build-macos:
-    runs-on: macos-26
+    runs-on: [self-hosted, macos-host]
     permissions:
       id-token: write
       attestations: write
