@@ -13,6 +13,8 @@ env:
 jobs:
   build-ios:
     runs-on: [macos-host]
+    env:
+      PATH: /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
     permissions:
       id-token: write
       attestations: write
@@ -71,6 +73,8 @@ jobs:
 
   build-macos:
     runs-on: [macos-host]
+    env:
+      PATH: /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
     permissions:
       id-token: write
       attestations: write
