@@ -18,16 +18,16 @@ jobs:
       attestations: write
       contents: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: https://github.com/actions/checkout@v4
 
       - name: Setup Flutter
-        uses: subosito/flutter-action@v2
+        uses: https://github.com/subosito/flutter-action@v2
         with:
           channel: "stable"
           cache: true
 
       - name: Cache Pub dependencies
-        uses: actions/cache@v4
+        uses: https://github.com/actions/cache@v4
         with:
           path: |
             ~/.pub-cache
@@ -36,7 +36,7 @@ jobs:
             ${{ runner.os }}-pub-
 
       - name: Cache CocoaPods
-        uses: actions/cache@v4
+        uses: https://github.com/actions/cache@v4
         with:
           path: |
             ios/Pods
@@ -59,12 +59,12 @@ jobs:
           zip -r plezy-ios.ipa Payload
 
       - name: Attest IPA
-        uses: actions/attest-build-provenance@v2
+        uses: https://github.com/actions/attest-build-provenance@v2
         with:
           subject-path: plezy-ios.ipa
 
       - name: Upload IPA
-        uses: actions/upload-artifact@v4
+        uses: https://github.com/actions/upload-artifact@v4
         with:
           name: ios-ipa
           path: plezy-ios.ipa
@@ -76,16 +76,16 @@ jobs:
       attestations: write
       contents: read
     steps:
-      - uses: actions/checkout@v4
+      - uses: https://github.com/actions/checkout@v4
 
       - name: Setup Flutter
-        uses: subosito/flutter-action@v2
+        uses: https://github.com/subosito/flutter-action@v2
         with:
           channel: "stable"
           cache: true
 
       - name: Cache Pub dependencies
-        uses: actions/cache@v4
+        uses: https://github.com/actions/cache@v4
         with:
           path: |
             ~/.pub-cache
@@ -94,7 +94,7 @@ jobs:
             ${{ runner.os }}-pub-
 
       - name: Cache CocoaPods
-        uses: actions/cache@v4
+        uses: https://github.com/actions/cache@v4
         with:
           path: |
             macos/Pods
@@ -131,7 +131,7 @@ jobs:
           echo "MACOS_DMG_SIZE=$(stat -f%z plezy-macos.dmg)" >> $GITHUB_ENV
 
       - name: Attest macOS DMG
-        uses: actions/attest-build-provenance@v2
+        uses: https://github.com/actions/attest-build-provenance@v2
         with:
           subject-path: plezy-macos.dmg
 
@@ -141,7 +141,7 @@ jobs:
           echo "${{ env.MACOS_DMG_SIZE }}" > macos-dmg-size.txt
 
       - name: Upload macOS DMG
-        uses: actions/upload-artifact@v4
+        uses: https://github.com/actions/upload-artifact@v4
         with:
           name: macos-dmg
           path: |
