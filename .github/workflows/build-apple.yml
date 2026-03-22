@@ -1,6 +1,9 @@
 name: Build Apple Devices
 
 on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 env:
