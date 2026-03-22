@@ -12,7 +12,7 @@ env:
 
 jobs:
   build-ios:
-    runs-on: [self-hosted, macos-host]
+    runs-on: [macos-host]
     permissions:
       id-token: write
       attestations: write
@@ -70,7 +70,7 @@ jobs:
           path: plezy-ios.ipa
 
   build-macos:
-    runs-on: [self-hosted, macos-host]
+    runs-on: [macos-host]
     permissions:
       id-token: write
       attestations: write
